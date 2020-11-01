@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# CONSTANT
+contest="arc"
+
+if [ $# = 0 ]; then
+    echo "please input test number."
+    exit
+
+elif [ $# = 1 ]; then
+    END=$1
+
+elif [ $# = 2 ]; then
+    END=$2
+
+fi
+START=$1
+
+for ((NUM=${START} ; NUM<=${END} ; NUM++)); do
+    rm -rf ./${NUM}
+    mkdir ./${NUM}
+    for level in A B C D E F; do
+        mkdir ./${NUM}/${level^}
+        cp ../template/main.cpp ./${NUM}/${level^}
+    done
+
+    for level in a b c d e f; do
+        cd ./${NUM}/${level^}
+            URL="https://atcoder.jp/contests/"${contest}${NUM}"/tasks/"${contest}${NUM}"_"${level}
+        oj dl ${URL}
+        cd -
+    done
+done
