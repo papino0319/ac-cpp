@@ -2,10 +2,16 @@
 using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
-#define rep(i,n) for (int i = 0; i < (n); ++i)
+
 using ll = long long;
 using P = pair<int,int>;
 
+#define rep(i,n) for (ll i = 0; i < (ll)(n); ++i)
+
 int main() {
-  return 0;
+    // if require setprecision
+    //cout << std::fixed << std::setprecision(15);
+
+    ll ans = 0;
+    cout << ans << endl;
 }
