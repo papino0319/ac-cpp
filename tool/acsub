@@ -1,0 +1,7 @@
+#!/bin/sh
+
+actest
+url=`cat url.txt`
+echo $url
+#oj submit ${url} main.cpp -y --no-open
+oj submit ${url} main.cpp -y

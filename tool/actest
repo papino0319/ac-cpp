@@ -1,0 +1,4 @@
+#!/bin/sh
+
+g++ main.cpp -std=gnu++17 -Wall -Wextra -O2 
+oj test
